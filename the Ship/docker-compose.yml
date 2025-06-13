@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  offshore:
+    build:
+      context: ./offshore
+    container_name: offshore-proxy
+    ports:
+      - "9090:9090"
+    networks:
+      - proxy-net
+
+  ship:
+    build:
+      context: ./ship
+    container_name: ship-proxy
+    ports:
+      - "8080:8080"
+    depends_on:
+      - offshore
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    driver: bridge
