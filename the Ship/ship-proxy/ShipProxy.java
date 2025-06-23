@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 public class ShipProxy {
 
     private static final int LOCAL_PORT = 8080;
-    private static final String OFFSHORE_HOST = "offshore";
+    private static final String OFFSHORE_HOST = "localhost";
     private static final int OFFSHORE_PORT = 9090;
 
     public static void main(String[] args) {
